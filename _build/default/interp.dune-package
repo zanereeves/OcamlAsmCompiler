@@ -1,0 +1,62 @@
+(lang dune 3.10)
+(name interp)
+(sections (lib .) (libexec .))
+(files
+ (lib
+  (META
+   dune-package
+   lexer.ml
+   main.a
+   main.cma
+   main.cmi
+   main.cmt
+   main.cmx
+   main.cmxa
+   main.ml
+   main__.cmi
+   main__.cmt
+   main__.cmx
+   main__.ml
+   main__Lexer.cmi
+   main__Lexer.cmt
+   main__Lexer.cmx
+   main__Parser.cmi
+   main__Parser.cmt
+   main__Parser.cmti
+   main__Parser.cmx
+   opam
+   parser.ml
+   parser.mli))
+ (libexec (main.cmxs)))
+(library
+ (name interp)
+ (kind normal)
+ (archives (byte main.cma) (native main.cmxa))
+ (plugins (byte main.cma) (native main.cmxs))
+ (native_archives main.a)
+ (requires abstr)
+ (main_module_name Main)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name main__)
+     (visibility public)
+     (kind alias)
+     (source (path Main__) (impl (path main__.ml-gen))))
+    (name Main)
+    (modules
+     (module
+      (obj_name main__Lexer)
+      (visibility public)
+      (source (path Lexer) (impl (path lexer.ml))))
+     (module
+      (obj_name main)
+      (visibility public)
+      (source (path Main) (impl (path main.ml))))
+     (module
+      (obj_name main__Parser)
+      (visibility public)
+      (source (path Parser) (intf (path parser.mli)) (impl (path parser.ml))))))
+   (wrapped true))))

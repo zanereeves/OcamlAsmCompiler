@@ -1,0 +1,19 @@
+lib: [
+  "_build/install/default/lib/abstr/META"
+  "_build/install/default/lib/abstr/abstr.a"
+  "_build/install/default/lib/abstr/abstr.cma"
+  "_build/install/default/lib/abstr/abstr.cmi"
+  "_build/install/default/lib/abstr/abstr.cmt"
+  "_build/install/default/lib/abstr/abstr.cmx"
+  "_build/install/default/lib/abstr/abstr.cmxa"
+  "_build/install/default/lib/abstr/abstr.ml"
+  "_build/install/default/lib/abstr/abstr__Ast.cmi"
+  "_build/install/default/lib/abstr/abstr__Ast.cmt"
+  "_build/install/default/lib/abstr/abstr__Ast.cmx"
+  "_build/install/default/lib/abstr/ast.ml"
+  "_build/install/default/lib/abstr/dune-package"
+  "_build/install/default/lib/abstr/opam"
+]
+libexec: [
+  "_build/install/default/lib/abstr/abstr.cmxs"
+]

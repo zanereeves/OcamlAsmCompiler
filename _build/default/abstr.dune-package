@@ -1,0 +1,43 @@
+(lang dune 3.10)
+(name abstr)
+(sections (lib .) (libexec .))
+(files
+ (lib
+  (META
+   abstr.a
+   abstr.cma
+   abstr.cmi
+   abstr.cmt
+   abstr.cmx
+   abstr.cmxa
+   abstr.ml
+   abstr__Ast.cmi
+   abstr__Ast.cmt
+   abstr__Ast.cmx
+   ast.ml
+   dune-package
+   opam))
+ (libexec (abstr.cmxs)))
+(library
+ (name abstr)
+ (kind normal)
+ (archives (byte abstr.cma) (native abstr.cmxa))
+ (plugins (byte abstr.cma) (native abstr.cmxs))
+ (native_archives abstr.a)
+ (main_module_name Abstr)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name abstr)
+     (visibility public)
+     (kind alias)
+     (source (path Abstr) (impl (path abstr.ml-gen))))
+    (name Abstr)
+    (modules
+     (module
+      (obj_name abstr__Ast)
+      (visibility public)
+      (source (path Ast) (impl (path ast.ml))))))
+   (wrapped true))))

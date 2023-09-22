@@ -1,0 +1,118 @@
+# dune utop bin
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/zanereeves/Desktop/Ocaml/interp
+# Auto-detected concurrency: 8
+$ /Users/zanereeves/.opam/default/bin/ocamlc.opt -config > /var/folders/t6/q48j8xf13gvd656r10f0v73r0000gn/T/dune_814fbd_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; ocaml_bin = External "/Users/zanereeves/.opam/default/bin"
+#  ; ocaml = Ok External "/Users/zanereeves/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/Users/zanereeves/.opam/default/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/Users/zanereeves/.opam/default/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/Users/zanereeves/.opam/default/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/zanereeves/.opam/default/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" :
+#            "/Users/zanereeves/.opam/default/lib/ocaml:/Users/zanereeves/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/Users/zanereeves/.opam/default/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/zanereeves/Desktop/Ocaml/interp"
+#        ; "INSIDE_DUNE" :
+#            "/Users/zanereeves/Desktop/Ocaml/interp/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/zanereeves/Desktop/Ocaml/interp/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/zanereeves/Desktop/Ocaml/interp/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/zanereeves/Desktop/Ocaml/interp/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths =
+#      [ External "/Users/zanereeves/.opam/default/lib/ocaml"
+#      ; External "/Users/zanereeves/.opam/default/lib"
+#      ]
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "5.0.0"
+#      ; standard_library_default = "/Users/zanereeves/.opam/default/lib/ocaml"
+#      ; standard_library = "/Users/zanereeves/.opam/default/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "arm64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "aarch64-apple-darwin20.5.0"
+#      ; target = "aarch64-apple-darwin20.5.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X032"
+#      ; cmi_magic_number = "Caml1999I032"
+#      ; cmo_magic_number = "Caml1999O032"
+#      ; cma_magic_number = "Caml1999A032"
+#      ; cmx_magic_number = "Caml1999Y032"
+#      ; cmxa_magic_number = "Caml1999Z032"
+#      ; ast_impl_magic_number = "Caml1999M032"
+#      ; ast_intf_magic_number = "Caml1999N032"
+#      ; cmxs_magic_number = "Caml1999D032"
+#      ; cmt_magic_number = "Caml1999T032"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/zanereeves/.opam/default/bin/ocamldep.opt -modules -impl bin/main.ml) > _build/default/bin/.main.objs/main.impl.d
+$ (cd _build/default && /Users/zanereeves/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I bin/.main.objs/byte -I lib/.abstr.objs/byte -no-alias-deps -opaque -open Main__ -o bin/.main.objs/byte/main.cmo -c -impl bin/main.ml)
+$ (cd _build/default && /Users/zanereeves/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o bin/main.cma bin/.main.objs/byte/main__.cmo bin/.main.objs/byte/main__Parser.cmo bin/.main.objs/byte/main__Lexer.cmo bin/.main.objs/byte/main.cmo)
+$ (cd _build/default && /Users/zanereeves/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o bin/.utop/utop.exe -output-complete-exe /Users/zanereeves/.opam/default/lib/ocaml/compiler-libs/ocamlcommon.cma /Users/zanereeves/.opam/default/lib/ocaml/compiler-libs/ocamlbytecomp.cma /Users/zanereeves/.opam/default/lib/ocaml/compiler-libs/ocamltoplevel.cma /Users/zanereeves/.opam/default/lib/findlib/findlib.cma /Users/zanereeves/.opam/default/lib/findlib/findlib_top.cma /Users/zanereeves/.opam/default/lib/logs/logs.cma /Users/zanereeves/.opam/default/lib/lwt/lwt.cma /Users/zanereeves/.opam/default/lib/logs/logs_lwt.cma /Users/zanereeves/.opam/default/lib/ocplib-endian/ocplib_endian.cma /Users/zanereeves/.opam/default/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cma /Users/zanereeves/.opam/default/lib/ocaml/unix/unix.cma /Users/zanereeves/.opam/default/lib/ocaml/threads/threads.cma /Users/zanereeves/.opam/default/lib/lwt/unix/lwt_unix.cma -I /Users/zanereeves/.opam/default/lib/lwt/unix /Users/zanereeves/.opam/default/lib/react/react.cma /Users/zanereeves/.opam/default/lib/lwt_react/lwt_react.cma /Users/zanereeves/.opam/default/lib/result/result.cma /Users/zanereeves/.opam/default/lib/uutf/uutf.cma /Users/zanereeves/.opam/default/lib/uucp/uucp.cma /Users/zanereeves/.opam/default/lib/uuseg/uuseg.cma /Users/zanereeves/.opam/default/lib/zed/zed.cma /Users/zanereeves/.opam/default/lib/trie/trie.cma /Users/zanereeves/.opam/default/lib/mew/mew.cma /Users/zanereeves/.opam/default/lib/mew_vi/mew_vi.cma /Users/zanereeves/.opam/default/lib/lambda-term/lambda_term.cma -I /Users/zanereeves/.opam/default/lib/lambda-term /Users/zanereeves/.opam/default/lib/xdg/xdg.cma -I /Users/zanereeves/.opam/default/lib/xdg /Users/zanereeves/.opam/default/lib/utop/uTop.cma lib/abstr.cma bin/main.cma bin/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -linkall -warn-error -31)

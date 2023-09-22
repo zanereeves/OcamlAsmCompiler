@@ -1,0 +1,6 @@
+description = ""
+requires = ""
+archive(byte) = "abstr.cma"
+archive(native) = "abstr.cmxa"
+plugin(byte) = "abstr.cma"
+plugin(native) = "abstr.cmxs"

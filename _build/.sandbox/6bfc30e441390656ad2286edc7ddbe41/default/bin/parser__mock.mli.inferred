@@ -1,0 +1,60 @@
+type token =
+    WHILE
+  | UMINUS
+  | TRUE
+  | TIMES
+  | THEN
+  | SLASH
+  | SEMICOLON
+  | RPAREN
+  | RETURN
+  | RBRACE
+  | R
+  | PLUS
+  | NOT
+  | NEQ
+  | MINUS
+  | MAIN
+  | LPAREN
+  | LET
+  | LESST
+  | LEQ
+  | LBRACE
+  | INT of int
+  | IF
+  | ID of string
+  | GREATT
+  | GEQ
+  | FUNC
+  | FALSE
+  | EQUALS
+  | EOF
+  | ELSE
+  | DEQUALS
+  | COMMA
+  | COLON
+val menhir_begin_marker : int
+val xv_separated_nonempty_list_SEMICOLON_option_expr__ :
+  Abstr.Ast.expr option list
+val xv_separated_nonempty_list_COMMA_param_ : Abstr.Ast.param list
+val xv_separated_nonempty_list_COMMA_expr_ : Abstr.Ast.expr list
+val xv_separated_list_COMMA_param_ : Abstr.Ast.param list
+val xv_separated_list_COMMA_expr_ : Abstr.Ast.expr list
+val xv_prog : Abstr.Ast.program
+val xv_params : Abstr.Ast.param list
+val xv_param : Abstr.Ast.param
+val xv_option_expr_ : Abstr.Ast.expr option
+val xv_main_expr : Abstr.Ast.main_expr
+val xv_loption_separated_nonempty_list_COMMA_param__ : Abstr.Ast.param list
+val xv_loption_separated_nonempty_list_COMMA_expr__ : Abstr.Ast.expr list
+val xv_loption_delimited_LBRACE_separated_nonempty_list_SEMICOLON_option_expr___RBRACE__ :
+  Abstr.Ast.expr option list
+val xv_list_function_defn_ : Abstr.Ast.function_def list
+val xv_function_defn : Abstr.Ast.function_def
+val xv_expr : Abstr.Ast.expr
+val xv_delimited_LBRACE_separated_nonempty_list_SEMICOLON_option_expr___RBRACE_ :
+  Abstr.Ast.expr option list
+val xv_block_statement : Abstr.Ast.block_expr
+val xv_bin_op : Abstr.Ast.bop
+val xv_args : Abstr.Ast.expr list
+val menhir_end_marker : int

@@ -1,0 +1,56 @@
+
+** Conflict (shift/reduce) in state 65.
+** Token involved: MINUS
+** This state is reached from prog after reading:
+
+expr
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+list(statement) EOF 
+(?)
+
+** In state 65, looking ahead at MINUS, shifting is permitted
+** because of the following sub-derivation:
+
+statement list(statement) 
+expr 
+expr . MINUS expr 
+
+** In state 65, looking ahead at MINUS, reducing production
+** statement -> expr
+** is permitted because of the following sub-derivation:
+
+statement list(statement) // lookahead token appears because list(statement) can begin with MINUS
+expr . 
+
+** Conflict (shift/reduce) in state 7.
+** Token involved: LPAREN
+** This state is reached from prog after reading:
+
+ID
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+list(statement) EOF 
+(?)
+
+** In state 7, looking ahead at LPAREN, shifting is permitted
+** because of the following sub-derivation:
+
+statement list(statement) 
+expr 
+ID args 
+   . LPAREN loption(separated_nonempty_list(COMMA,expr)) RPAREN 
+
+** In state 7, looking ahead at LPAREN, reducing production
+** expr -> ID
+** is permitted because of the following sub-derivation:
+
+statement list(statement) // lookahead token appears because list(statement) can begin with LPAREN
+expr // lookahead token is inherited
+ID . 
