@@ -64,17 +64,31 @@ let rec e_emit = function
     | (Not, e) -> 
       e_emit e;
       emit "    cmp r0, #0";
-      emit "    moveq r0, #0";
-      emit "    movne r0, #1"
+      emit "    moveq r0, #1";
+      emit "    movne r0, #0"
     | (_, _) -> emit "TODO")
+  |  Call (s, el) ->
+      let lngth = List.length el in 
+      if lngth = 0
+        then (emit ("   bl "^s))
+      else if lngth = 1
+        then (e_emit (List.nth el 0); emit ("   bl "^s))
+      else if lngth >= 2 && lngth <= 4
+        then (emit "   sub sp, sp, #16";
+              let rec do_all lst i s = 
+                match lst with
+                | [] -> emit "    pop {r0, r1, r2, r3}"; emit ("    bl "^s)
+                | x :: xs -> e_emit x; emit ("    str r0, [sp, #"^string_of_int(4*i)^"]"); do_all xs (i+1) s; in
+              do_all el 0 s)
+      else failwith "Invalid number of function arguments"
   | _ -> emit "todo";;
 
 let rec emitter state = match state with
   | Block statement -> List.iter emitter statement
   | Main b ->
     emit ".global main";
-    emit ".main:";
-    emit "    push {fp, lr}:";
+    emit "  main:";
+    emit "    push {fp, lr}";
     emitter b;
     emit "    mov r0, #0";
     emit "    pop {fp, pc}"
@@ -93,4 +107,4 @@ let unravel_prog p =
   match p with
   | Prog l -> List.iter emitter l;;
 
-unravel_prog (parse "func main() {assert(1); assert(!0); {assert(1); assert(1);}}")
+unravel_prog (parse "func main() {putchar(46);}")

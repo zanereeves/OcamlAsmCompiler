@@ -274,7 +274,7 @@ let _menhir_action_01 =
 # 275 "bin/parser.ml"
      in
     (
-# 64 "bin/parser.mly"
+# 65 "bin/parser.mly"
                                                        (args)
 # 280 "bin/parser.ml"
      : (Abstr.Ast.expr list))
@@ -282,7 +282,7 @@ let _menhir_action_01 =
 let _menhir_action_02 =
   fun exprs ->
     (
-# 77 "bin/parser.mly"
+# 78 "bin/parser.mly"
                                             ( Block (exprs) )
 # 288 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -290,7 +290,7 @@ let _menhir_action_02 =
 let _menhir_action_03 =
   fun i ->
     (
-# 94 "bin/parser.mly"
+# 95 "bin/parser.mly"
               ( Int i )
 # 296 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -298,7 +298,7 @@ let _menhir_action_03 =
 let _menhir_action_04 =
   fun x ->
     (
-# 95 "bin/parser.mly"
+# 96 "bin/parser.mly"
              ( Var x )
 # 304 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -306,7 +306,7 @@ let _menhir_action_04 =
 let _menhir_action_05 =
   fun f_args x ->
     (
-# 96 "bin/parser.mly"
+# 97 "bin/parser.mly"
                            (Call(x, f_args))
 # 312 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -314,7 +314,7 @@ let _menhir_action_05 =
 let _menhir_action_06 =
   fun () ->
     (
-# 97 "bin/parser.mly"
+# 98 "bin/parser.mly"
            (Bool true)
 # 320 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -322,7 +322,7 @@ let _menhir_action_06 =
 let _menhir_action_07 =
   fun () ->
     (
-# 98 "bin/parser.mly"
+# 99 "bin/parser.mly"
             (Bool false)
 # 328 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -330,12 +330,12 @@ let _menhir_action_07 =
 let _menhir_action_08 =
   fun e1 e2 ->
     let op = 
-# 107 "bin/parser.mly"
+# 108 "bin/parser.mly"
             ( LessT )
 # 336 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 341 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -343,12 +343,12 @@ let _menhir_action_08 =
 let _menhir_action_09 =
   fun e1 e2 ->
     let op = 
-# 108 "bin/parser.mly"
+# 109 "bin/parser.mly"
              (GreatT)
 # 349 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 354 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -356,12 +356,12 @@ let _menhir_action_09 =
 let _menhir_action_10 =
   fun e1 e2 ->
     let op = 
-# 109 "bin/parser.mly"
+# 110 "bin/parser.mly"
               ( Eq )
 # 362 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 367 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -369,12 +369,12 @@ let _menhir_action_10 =
 let _menhir_action_11 =
   fun e1 e2 ->
     let op = 
-# 110 "bin/parser.mly"
+# 111 "bin/parser.mly"
           ( Neq )
 # 375 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 380 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -382,12 +382,12 @@ let _menhir_action_11 =
 let _menhir_action_12 =
   fun e1 e2 ->
     let op = 
-# 111 "bin/parser.mly"
+# 112 "bin/parser.mly"
             ( Mult )
 # 388 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 393 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -395,12 +395,12 @@ let _menhir_action_12 =
 let _menhir_action_13 =
   fun e1 e2 ->
     let op = 
-# 112 "bin/parser.mly"
+# 113 "bin/parser.mly"
            ( Add )
 # 401 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 406 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -408,12 +408,12 @@ let _menhir_action_13 =
 let _menhir_action_14 =
   fun e1 e2 ->
     let op = 
-# 113 "bin/parser.mly"
+# 114 "bin/parser.mly"
             (Div)
 # 414 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 419 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -421,12 +421,12 @@ let _menhir_action_14 =
 let _menhir_action_15 =
   fun e1 e2 ->
     let op = 
-# 114 "bin/parser.mly"
+# 115 "bin/parser.mly"
             (Minus)
 # 427 "bin/parser.ml"
      in
     (
-# 99 "bin/parser.mly"
+# 100 "bin/parser.mly"
                                       ( Binop (op, e1, e2))
 # 432 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -434,7 +434,7 @@ let _menhir_action_15 =
 let _menhir_action_16 =
   fun e ->
     (
-# 100 "bin/parser.mly"
+# 101 "bin/parser.mly"
                              (e)
 # 440 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -442,7 +442,7 @@ let _menhir_action_16 =
 let _menhir_action_17 =
   fun e ->
     (
-# 102 "bin/parser.mly"
+# 103 "bin/parser.mly"
         (Uop(Neg, e) )
 # 448 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -450,7 +450,7 @@ let _menhir_action_17 =
 let _menhir_action_18 =
   fun e ->
     (
-# 103 "bin/parser.mly"
+# 104 "bin/parser.mly"
                     ( Uop(Not, e))
 # 456 "bin/parser.ml"
      : (Abstr.Ast.expr))
@@ -458,7 +458,7 @@ let _menhir_action_18 =
 let _menhir_action_19 =
   fun block ->
     (
-# 59 "bin/parser.mly"
+# 60 "bin/parser.mly"
                                                           (Main (block))
 # 464 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -466,7 +466,7 @@ let _menhir_action_19 =
 let _menhir_action_20 =
   fun block name param_l ->
     (
-# 60 "bin/parser.mly"
+# 61 "bin/parser.mly"
                                                                  (FuncA (name, param_l, block))
 # 472 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -522,7 +522,7 @@ let _menhir_action_26 =
 let _menhir_action_27 =
   fun name ->
     (
-# 72 "bin/parser.mly"
+# 73 "bin/parser.mly"
                  ( TParam name )
 # 528 "bin/parser.ml"
      : (Abstr.Ast.param))
@@ -535,7 +535,7 @@ let _menhir_action_28 =
 # 536 "bin/parser.ml"
      in
     (
-# 68 "bin/parser.mly"
+# 69 "bin/parser.mly"
                                                           (params)
 # 541 "bin/parser.ml"
      : (Abstr.Ast.param list))
@@ -543,7 +543,7 @@ let _menhir_action_28 =
 let _menhir_action_29 =
   fun s ->
     (
-# 55 "bin/parser.mly"
+# 56 "bin/parser.mly"
                                 ( Prog (s))
 # 549 "bin/parser.ml"
      : (Abstr.Ast.program))
@@ -583,7 +583,7 @@ let _menhir_action_33 =
 let _menhir_action_34 =
   fun e1 stat stat2 ->
     (
-# 82 "bin/parser.mly"
+# 83 "bin/parser.mly"
                                                                                            (If (e1, stat, stat2))
 # 589 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -591,7 +591,7 @@ let _menhir_action_34 =
 let _menhir_action_35 =
   fun e1 x ->
     (
-# 83 "bin/parser.mly"
+# 84 "bin/parser.mly"
                                                 ( Let (x, ExprS (e1)) )
 # 597 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -599,7 +599,7 @@ let _menhir_action_35 =
 let _menhir_action_36 =
   fun e1 ->
     (
-# 84 "bin/parser.mly"
+# 85 "bin/parser.mly"
                                    ( ReturnS (e1) )
 # 605 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -607,7 +607,7 @@ let _menhir_action_36 =
 let _menhir_action_37 =
   fun cap e1 ->
     (
-# 85 "bin/parser.mly"
+# 86 "bin/parser.mly"
                                                               ( WhileS (e1, cap) )
 # 613 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -615,7 +615,7 @@ let _menhir_action_37 =
 let _menhir_action_38 =
   fun e ->
     (
-# 86 "bin/parser.mly"
+# 87 "bin/parser.mly"
                                                   ( Assert (e) )
 # 621 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -623,7 +623,7 @@ let _menhir_action_38 =
 let _menhir_action_39 =
   fun e1 ->
     (
-# 87 "bin/parser.mly"
+# 88 "bin/parser.mly"
                             ( ExprS(e1) )
 # 629 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -631,7 +631,7 @@ let _menhir_action_39 =
 let _menhir_action_40 =
   fun cap ->
     (
-# 88 "bin/parser.mly"
+# 89 "bin/parser.mly"
                             ( cap )
 # 637 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -639,7 +639,7 @@ let _menhir_action_40 =
 let _menhir_action_41 =
   fun cap ->
     (
-# 89 "bin/parser.mly"
+# 90 "bin/parser.mly"
                           (cap)
 # 645 "bin/parser.ml"
      : (Abstr.Ast.statement))
@@ -1795,7 +1795,16 @@ include struct
       | SLASH ->
           let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
           _menhir_run_17 _menhir_stack _menhir_lexbuf _menhir_lexer
-      | COMMA | DEQUALS | GREATT | LESST | MINUS | NEQ | PLUS | RPAREN | SEMICOLON ->
+      | PLUS ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_19 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | MINUS ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_23 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | LESST ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_25 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | COMMA | DEQUALS | GREATT | NEQ | RPAREN | SEMICOLON ->
           let MenhirCell1_expr (_menhir_stack, _menhir_s, e1) = _menhir_stack in
           let e2 = _v in
           let _v = _menhir_action_10 e1 e2 in
@@ -1812,7 +1821,16 @@ include struct
       | SLASH ->
           let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
           _menhir_run_17 _menhir_stack _menhir_lexbuf _menhir_lexer
-      | COMMA | DEQUALS | GREATT | LESST | MINUS | NEQ | PLUS | RPAREN | SEMICOLON ->
+      | PLUS ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_19 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | MINUS ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_23 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | LESST ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_25 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | COMMA | DEQUALS | GREATT | NEQ | RPAREN | SEMICOLON ->
           let MenhirCell1_expr (_menhir_stack, _menhir_s, e1) = _menhir_stack in
           let e2 = _v in
           let _v = _menhir_action_09 e1 e2 in
@@ -1863,7 +1881,16 @@ include struct
       | SLASH ->
           let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
           _menhir_run_17 _menhir_stack _menhir_lexbuf _menhir_lexer
-      | COMMA | DEQUALS | GREATT | LESST | MINUS | NEQ | PLUS | RPAREN | SEMICOLON ->
+      | PLUS ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_19 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | MINUS ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_23 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | LESST ->
+          let _menhir_stack = MenhirCell1_expr (_menhir_stack, _menhir_s, _v) in
+          _menhir_run_25 _menhir_stack _menhir_lexbuf _menhir_lexer
+      | COMMA | DEQUALS | GREATT | NEQ | RPAREN | SEMICOLON ->
           let MenhirCell1_expr (_menhir_stack, _menhir_s, e1) = _menhir_stack in
           let e2 = _v in
           let _v = _menhir_action_11 e1 e2 in
