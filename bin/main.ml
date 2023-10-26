@@ -1,9 +1,11 @@
 open Abstr.Ast
 
-
 let parse (s : string) : program =
   let lexbuf = Lexing.from_string s in
   let ast = Parser.prog Lexer.read lexbuf in ast;;
+
+let global = ref 0;;
+let incre g = incr g; !g;;
 
 let emit s =
   print_string (s^"\n");;
@@ -70,9 +72,9 @@ let rec e_emit = function
   |  Call (s, el) ->
       let lngth = List.length el in 
       if lngth = 0
-        then (emit ("   bl "^s))
+        then (emit ("    bl "^s))
       else if lngth = 1
-        then (e_emit (List.nth el 0); emit ("   bl "^s))
+        then (e_emit (List.nth el 0); emit ("     bl "^s))
       else if lngth >= 2 && lngth <= 4
         then (emit "   sub sp, sp, #16";
               let rec do_all lst i s = 
@@ -99,12 +101,21 @@ let rec emitter state = match state with
     emit "    moveq r0, #'.'";
     emit "    movne r0, #'F'";
     emit "    bl putchar"
+  | If (e, s1, s2) ->
+    e_emit e;
+    emit "    cmp r0, #0";
+    (let false_label = incre global in 
+      (let end_label = incre global in
+        emit ("    beq .L"^string_of_int false_label);
+        emitter s1;
+        emit ("   beq .L"^string_of_int end_label);
+        emit ("   .L"^(string_of_int false_label)^":");
+        emitter s2;
+        emit ("   .L"^(string_of_int end_label)^":")))
   | _ -> emit "todo";;
-
-  
 
 let unravel_prog p = 
   match p with
   | Prog l -> List.iter emitter l;;
 
-unravel_prog (parse "func main() {putchar(46);}")
+unravel_prog (parse "func main() {if (1<2) {putchar(42);} else {putchar(41);} if (2<2) {putchar(42);} else {putchar(41);}}")
